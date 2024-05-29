@@ -7,6 +7,7 @@
     "@syncfusion/ej2-react-charts": "^25.2.6",
     "@syncfusion/ej2-react-dropdowns": "^25.2.6",
     "@syncfusion/ej2-react-grids": "^25.2.6",
+    "@syncfusion/ej2-react-kanban": "^25.2.6",
     "@syncfusion/ej2-react-popups": "^25.2.4",
     "@syncfusion/ej2-react-schedule": "^25.2.6",
     "@testing-library/jest-dom": "^5.17.0",
