@@ -40,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+          "url('https://img.freepik.com/free-psd/3d-rendering-shopping-concept_23-2149877674.jpg?t=st=1716891470~exp=1716895070~hmac=faf3120bbf20a3602b4b9e6fe9f56024c6118071cd457afc062abe8c5b2cec43&w=996')",
       },
     },
   },

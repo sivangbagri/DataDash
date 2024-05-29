@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-react-charts": "^25.2.6",
+    "@syncfusion/ej2-react-dropdowns": "^25.2.6",
+    "@syncfusion/ej2-react-grids": "^25.2.6",
     "@syncfusion/ej2-react-popups": "^25.2.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
