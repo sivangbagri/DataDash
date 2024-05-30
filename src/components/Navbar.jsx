@@ -7,9 +7,9 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import avatar from "../data/avatar.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
-import { useStateContext } from "../contexts/ContextProvider";
+import { useStateContext  } from "../contexts/ContextProvider";
 
-const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
+const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
       type="button"
@@ -34,6 +34,8 @@ export default function Navbar() {
     handleClick,
     screenSize,
     setScreenSize,
+    currentColor
+    
   } = useStateContext();
   useEffect(() => {
     const handleResize = () => {
@@ -53,28 +55,28 @@ export default function Navbar() {
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prev) => !prev)}
-        color={"blue"}
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
         <NavButton
           title="Cart"
           customFunc={() => handleClick("cart")}
-          color={"blue"}
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
           dotColor="#03C9D7"
           customFunc={() => handleClick("chat")}
-          color={"blue"}
+          color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notification"
           dotColor="rgb(254, 201, 15)"
           customFunc={() => handleClick("notification")}
-          color={"blue"}
+          color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">

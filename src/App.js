@@ -25,9 +25,9 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import { useStateContext } from "./contexts/ContextProvider";
 
 export default function App() {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings,setThemeSettings,currentColor,currentMode} = useStateContext();
   return (
-    <>
+    <div className={currentMode==='Dark'?'dark':''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -35,7 +35,8 @@ export default function App() {
               <button
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl text-white hover:bg-light-gray"
-                style={{ background: "blue", borderRadius: "50%" }}
+                style={{ background: currentColor, borderRadius: "50%" }}
+                onClick={()=>{setThemeSettings(true)}}
               >
                 <FiSettings />
               </button>
@@ -62,6 +63,7 @@ export default function App() {
             </div>
 
             <div>
+              {themeSettings && <ThemeSettings/>}
               <Routes>
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
@@ -91,6 +93,6 @@ export default function App() {
           </div>
         </div>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
