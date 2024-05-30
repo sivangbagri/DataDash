@@ -20,9 +20,9 @@ export default function Ecommerce() {
   const { currentColor } = useStateContext();
   return (
     <>
-      <div className="mt-24">
-        <div className="flex flex-wrap lg:flex-nowrap justify-between ">
-          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+      <div className="mt-16">
+        <div className="flex flex-wrap justify-center mx-5">
+          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full  p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-bold text-gray-400">Earnings</p>
@@ -41,11 +41,11 @@ export default function Ecommerce() {
             </div>
           </div>
           {/* Cards */}
-          <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
+          <div className="flex m-3 flex-wrap justify-center gap-1 items-center ">
             {earningData.map((item) => (
               <div
                 key={item.title}
-                className="bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl "
+                className={`bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl  `}
               >
                 <button
                   type="button"
@@ -108,13 +108,13 @@ export default function Ecommerce() {
                 </div>
                 <div className="mt-5">
                   <SparkLine
-                    currentColor="blue"
+                    currentColor={currentColor}
                     id="line-sparkLine"
                     type="Line"
                     height="80px"
                     width="250px"
                     data={SparklineAreaData}
-                    color="blue"
+                    color={currentColor}
                   />
                 </div>
                 <div className="mt-5">
