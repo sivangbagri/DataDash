@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { FiSettings } from "react-icons/fi";
@@ -21,13 +21,24 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Footer, Sidebar, ThemeSettings, Chat } from "./components";
 import { useStateContext } from "./contexts/ContextProvider";
 
 export default function App() {
-  const { activeMenu, themeSettings,setThemeSettings,currentColor,currentMode} = useStateContext();
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+    isClicked,
+    todo,
+    setTodo
+  } = useStateContext();
+
+  
   return (
-    <div className={currentMode==='Dark'?'dark':''}>
+    <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -36,18 +47,20 @@ export default function App() {
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl text-white hover:bg-light-gray"
                 style={{ background: currentColor, borderRadius: "50%" }}
-                onClick={()=>{setThemeSettings(true)}}
+                onClick={() => {
+                  setThemeSettings(true);
+                }}
               >
                 <FiSettings />
               </button>
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white transition-all duration-500">
               <Sidebar />
             </div>
           ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">
+            <div className="w-0 dark:bg-secondary-dark-bg transition-all duration-500">
               <Sidebar />
             </div>
           )}
@@ -63,7 +76,9 @@ export default function App() {
             </div>
 
             <div>
-              {themeSettings && <ThemeSettings/>}
+              {themeSettings && <ThemeSettings />}
+              {isClicked.chat && <Chat />}
+
               <Routes>
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />

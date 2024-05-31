@@ -9,7 +9,7 @@ import avatar from "../data/avatar.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext  } from "../contexts/ContextProvider";
 
-const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
+const NavButton = ({ title, customFunc, icon, color, dotColor,showDot}) => (
   <TooltipComponent content={title} position="BottomCenter">
     <button
       type="button"
@@ -17,10 +17,10 @@ const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
       style={{ color }}
       className="relative text-xl rounded-full p-3 hover:bg-light-gray"
     >
-      <span
+      {showDot && <span
         style={{ background: dotColor }}
         className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
-      />
+      />}
       {icon}
     </button>
   </TooltipComponent>
@@ -34,7 +34,8 @@ export default function Navbar() {
     handleClick,
     screenSize,
     setScreenSize,
-    currentColor
+    currentColor,
+    todo
     
   } = useStateContext();
   useEffect(() => {
@@ -50,6 +51,8 @@ export default function Navbar() {
     if (screenSize <= 900) setActiveMenu(false);
     else setActiveMenu(true);
   }, [screenSize]);
+
+  
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
@@ -57,6 +60,7 @@ export default function Navbar() {
         customFunc={() => setActiveMenu((prev) => !prev)}
         color={currentColor}
         icon={<AiOutlineMenu />}
+        showDot={todo.length>0}
       />
       <div className="flex">
         <NavButton
@@ -64,6 +68,7 @@ export default function Navbar() {
           customFunc={() => handleClick("cart")}
           color={currentColor}
           icon={<FiShoppingCart />}
+          showDot={todo.length>0}
         />
         <NavButton
           title="Chat"
@@ -71,6 +76,7 @@ export default function Navbar() {
           customFunc={() => handleClick("chat")}
           color={currentColor}
           icon={<BsChatLeft />}
+          showDot={todo.length>0}
         />
         <NavButton
           title="Notification"
@@ -78,6 +84,7 @@ export default function Navbar() {
           customFunc={() => handleClick("notification")}
           color={currentColor}
           icon={<RiNotification3Line />}
+          showDot={todo.length>0}
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
@@ -97,7 +104,6 @@ export default function Navbar() {
           </div>
         </TooltipComponent>
         {isClicked.cart && <Cart />}
-        {isClicked.chat && <Chat />}
         {isClicked.notification && <Notification />}
       </div>
     </div>

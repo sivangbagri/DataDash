@@ -10,8 +10,8 @@ export default function ThemeSettings() {
 
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
   return (
-    <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
-      <div className={`float-right h-screen dark:text-white bg-white dark:bg-secondary-dark-bg w-400`}>
+    <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0 ">
+      <div className={`float-right h-screen dark:text-white bg-white dark:bg-secondary-dark-bg w-400 transition-all duration-300`}>
         <div className="flex justify-between items-center p-4 ml-4">
           <p className="text-xl font-semibold "> Settings</p>
           <button
