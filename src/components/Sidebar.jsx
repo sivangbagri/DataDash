@@ -32,7 +32,7 @@ export default function Sidebar() {
             >
               {" "}
               <SiShopware />
-              <span>Shoppy</span>
+              <span>DataDash</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
