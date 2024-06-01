@@ -36,7 +36,13 @@ export default function App() {
     setTodo
   } = useStateContext();
 
-  
+  useEffect(()=>{
+    const todos=JSON.parse(localStorage.getItem("todos"));
+    if(todos && todos.length >0) setTodo(todos);
+  },[])
+  useEffect(()=>{
+    localStorage.setItem("todos",JSON.stringify(todo))
+  },[todo])
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>

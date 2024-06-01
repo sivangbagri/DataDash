@@ -5,6 +5,7 @@ import { Header } from '../components';
 
 const change = (args) => {
   document.getElementById('preview').style.backgroundColor = args.currentValue.hex;
+  document.getElementById('hex').innerText=args.currentValue.hex;
 };
 
 
@@ -22,6 +23,7 @@ const ColorPicker = () => (
           <p className="text-2xl font-semibold mt-2 mb-4">Inline Picker</p>
           <ColorPickerComponent id="inline-picker" mode="Picker" modeSwitcher={false} inline showButtons={false} change={change}  />
         </div>
+        <p id="hex"></p>
       </div>
     </div>
   </div>

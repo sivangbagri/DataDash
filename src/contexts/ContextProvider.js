@@ -56,7 +56,7 @@ export const ContextProvider = ({ children }) => {
           setThemeSettings,
           todo,
           addTodo,
-          removeTodo
+          removeTodo,setTodo
 
         }}
       >

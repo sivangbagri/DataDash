@@ -16,6 +16,7 @@ import {
 } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 import product9 from "../data/product9.jpg";
+import News from "../components/News";
 export default function Ecommerce() {
   const { currentColor,isClicked } = useStateContext();
   return (
@@ -26,7 +27,7 @@ export default function Ecommerce() {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl">$63,448.78</p>
+              <p className="text-2xl font-semibold drop-shadow-lg">$63,448.78</p>
               </div>
             </div>
 
@@ -62,7 +63,7 @@ export default function Ecommerce() {
                 </button>
                 <p className="mt-3">
                   <span className="text-lg font-semibold">{item.amount}</span>
-                  <span className={`text-sm text-${item.pcColor} ml-2`}>
+                  <span className={`text-sm text-${item.pcColor} ml-2`} style={{color:item.pcColor}}>
                     {item.percentage}
                   </span>
                 </p>
@@ -132,9 +133,15 @@ export default function Ecommerce() {
               <div>
                 <Stacked width="320px" height="360px" />
               </div>
+            
             </div>
-          </div>
+            </div>
+            
         </div>
+        <div className="flex gap-10 flex-wrap mx-24">
+            <News/>
+           
+          </div>
       </div>
     </>
   );
