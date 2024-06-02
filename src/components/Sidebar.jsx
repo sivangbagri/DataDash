@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { SiShopware } from "react-icons/si";
+import { SiAzuredataexplorer } from "react-icons/si";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { MdOutlineCancel } from "react-icons/md";
 
@@ -31,7 +31,7 @@ export default function Sidebar() {
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
               {" "}
-              <SiShopware />
+              <SiAzuredataexplorer />
               <span>DataDash</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
