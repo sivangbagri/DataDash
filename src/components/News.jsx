@@ -74,7 +74,7 @@ export default function News() {
           "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2puNTRQOUNCRWJhSnlQNDdvS0VDZ0FQAQ",
       },
       {
-        date: 1694548591,
+        date: 1694548592,
         domain: "www.npr.org",
         image:
           "https://media.npr.org/assets/img/2023/09/12/gettyimages-1363336039_wide-7e28f68a400654c63dde7fe102238bc9a2fa3752-s1400-c100.jpg",
@@ -139,7 +139,7 @@ export default function News() {
           "CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2puNTRQOUNCRWJhSnlQNDdvS0VDZ0FQAQ",
       },
       {
-        date: 1694548591,
+        date: 1694548593,
         domain: "www.npr.org",
         image:
           "https://media.npr.org/assets/img/2023/09/12/gettyimages-1363336039_wide-7e28f68a400654c63dde7fe102238bc9a2fa3752-s1400-c100.jpg",
