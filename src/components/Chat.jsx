@@ -65,7 +65,7 @@ export default function Chat() {
             type="submit"
             onClick={() => addTodo({ id: Date.now(), value: todo_item })}
             style={{ backgroundColor: currentColor }}
-            className={`text-white mb-3 p-2 text-xs ont-thin rounded-md `}
+            className={`text-white mb-3 p-2 text-xs ont-thin rounded-md hover:opacity-75`}
           >
             Add
           </button>

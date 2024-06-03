@@ -4,7 +4,14 @@ import { GoDotFill } from "react-icons/go";
 import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 
-import { Stacked, Pie, Button, LineChart, SparkLine, Chat } from "../components";
+import {
+  Stacked,
+  Pie,
+  Button,
+  LineChart,
+  SparkLine,
+  Chat,
+} from "../components";
 import {
   earningData,
   medicalproBranding,
@@ -18,16 +25,18 @@ import { useStateContext } from "../contexts/ContextProvider";
 import product9 from "../data/product9.jpg";
 import News from "../components/News";
 export default function Ecommerce() {
-  const { currentColor,isClicked } = useStateContext();
+  const { currentColor, isClicked } = useStateContext();
   return (
     <>
- <div className="mt-24">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center  ml-7">
-          <div className="flex justify-between items-center">
-            <div>
-              <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl font-semibold drop-shadow-lg">$63,448.78</p>
+      <div className="mt-24">
+        <div className="flex flex-wrap lg:flex-nowrap justify-center ">
+          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="font-bold text-gray-400">Earnings</p>
+                <p className="text-2xl font-semibold drop-shadow-lg">
+                  $63,448.78
+                </p>
               </div>
             </div>
 
@@ -41,15 +50,14 @@ export default function Ecommerce() {
               />
             </div>
           </div>
-          
+
           {/* Cards */}
 
-          <div className="flex m-3 flex-wrap justify-center gap-1 items-center ">
-
+          <div className="flex m-3 flex-wrap gap-1 items-center ">
             {earningData.map((item) => (
               <div
                 key={item.title}
-                className={`bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56  p-4 pt-9 rounded-2xl `}
+                className={`bg-white h-44 dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56   p-4 pt-9 rounded-2xl `}
               >
                 <button
                   type="button"
@@ -63,7 +71,10 @@ export default function Ecommerce() {
                 </button>
                 <p className="mt-3">
                   <span className="text-lg font-semibold">{item.amount}</span>
-                  <span className={`text-sm text-${item.pcColor} ml-2`} style={{color:item.pcColor}}>
+                  <span
+                    className={`text-sm text-${item.pcColor} ml-2`}
+                    style={{ color: item.pcColor }}
+                  >
                     {item.percentage}
                   </span>
                 </p>
@@ -73,8 +84,8 @@ export default function Ecommerce() {
           </div>
         </div>
 
-        <div className="flex gap-10 flex-wrap justify-center">
-          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780  ">
+        <div className="flex justify-center  ml-5">
+          <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg mt-3 p-2 rounded-2xl w-7/10 ">
             <div className="flex justify-between">
               <p className="font-semibold text-xl">Revenue Updates</p>
               <div className="flex items-center gap-4">
@@ -94,7 +105,7 @@ export default function Ecommerce() {
             </div>
             {/* Charts */}
             <div className="mt-10 flex gap-10 flex-wrap justify-center">
-              <div className=" border-r-1 border-color m-4 pr-10">
+              <div className=" border-r-1 border-color m-4 pr-5">
                 <div>
                   <p>
                     <span className="text-3xl font-semibold">$93,438</span>
@@ -131,17 +142,15 @@ export default function Ecommerce() {
                 </div>
               </div>
               <div>
-                <Stacked width="320px" height="360px" />
+                <Stacked width="300px" height="340px" />
               </div>
-            
             </div>
-            </div>
-            
-        </div>
-        <div className="flex gap-10 flex-wrap mx-24">
-            <News/>
-           
           </div>
+          <div className="">
+          <News />
+        </div>
+        </div>
+        
       </div>
     </>
   );

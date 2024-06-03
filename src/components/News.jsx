@@ -235,7 +235,7 @@ export default function News() {
   }, []);
   return (
     <>
-      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-2 p-4 rounded-2xl w-1/2 h-56 overflow-y-scroll no-scrollbar ">
+      <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-2 p-4 rounded-2xl w-72 mt-3  h-96 overflow-y-scroll no-scrollbar ">
         <p className="text-black font-medium mb-4 dark:text-white text-xl">
           News
         </p>
@@ -248,7 +248,7 @@ export default function News() {
               </p>
               <p className="text-gray-400 text-xs mt-2 mb-1">{item.preview}</p>
               <Link
-                className={`text-gray-400 text-xs mb-8`}
+                className={`text-gray-400 text-xs mb-8 hover:opacity-75`}
                 style={{ color: currentColor }}
                 to={item.link}
               >

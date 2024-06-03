@@ -90,7 +90,7 @@ export default function Cart() {
             type="submit"
             style={{ backgroundColor: currentColor }}
             onClick={chat}
-            className={`text-white mb-2 p-2 rounded-full `}
+            className={`text-white mb-2 p-2 rounded-full hover:opacity-75 `}
           >
             <BsArrowUpCircle />
           </button>
