@@ -11,7 +11,7 @@ import {
   Stacked,
   Pyramid,
   Customers,
-  Kanban,
+  
   Line,
   Area,
   Bar,
@@ -21,8 +21,10 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
+import Kanban from "./pages/Kanban/Kanban"
 import { Navbar, Footer, Sidebar, ThemeSettings, Chat, Cart } from "./components";
 import { useStateContext } from "./contexts/ContextProvider";
+import KanbanBoard from "./pages/Kanban/KanbanBoard";
 
 export default function App() {
   const {
@@ -96,7 +98,7 @@ export default function App() {
                 <Route path="/customers" element={<Customers />} />
 
                 {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/kanban" element={<KanbanBoard/>} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
