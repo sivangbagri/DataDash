@@ -1,37 +1,32 @@
-import React from "react";
+import {React,useState  } from "react";
 import { Draggable } from "react-beautiful-dnd";
-import {useStateContext} from "../../contexts/ContextProvider"
+import { useStateContext } from "../../contexts/ContextProvider";
 export default function Task({ task, index }) {
-
   const { currentColor } = useStateContext();
+  const [isDragging, setIsDragging] = useState(false);
 
-  const bgcolorChange = (props) => {
-    return props.isDragging
-      ? "green-500"
-      : props.isDraggable
-      ? props.isBacklog
-        ? "red-800"
-        : "red-200"
-      : props.isBacklog
-      ? "blue-900"
-      : "black";
-  };
+
+  
+  
   return (
     <Draggable draggableId={`${task.id}`} key={task.id} index={index}>
       {(provided, snapshot) => {
+         const { isDragging, } = snapshot;
+ 
         return (
           <div
             {...provided.draggableProps}
             ref={provided.innerRef}
             {...provided.dragHandleProps}
             isDragging={snapshot.isDragging}
-            className="bg-purple-700 my-3 p-2 rounded-md opacity-80"
+            
+            className={`${isDragging?`bg-[#9ca3af]`:`bg-white`} drop-shadow-md my-3 p-5 rounded-md opacity-80 text-black`}
           >
             <div className="flex ">
-              <p className="text-xs font-thin ">#{task.id}</p>
+              <p className="text-sm ">Task {task.id}</p>
             </div>
             <div className="flex">
-              <p className="text-white text-sm">{task.title}</p>
+              <p className=" text-sm font-thin">{task.title}</p>
             </div>
             {provided.placeholder}
           </div>
