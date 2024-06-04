@@ -21,7 +21,7 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
-import { Navbar, Footer, Sidebar, ThemeSettings, Chat, Cart } from "./components";
+import { Navbar, Footer, Sidebar, ThemeSettings, Chat, Cart, UserProfile } from "./components";
 import { useStateContext } from "./contexts/ContextProvider";
 
 export default function App() {
@@ -85,6 +85,7 @@ export default function App() {
               {themeSettings && <ThemeSettings />}
               {isClicked.chat && <Chat />}
               {isClicked.cart && <Cart/>}
+              {isClicked.userProfile && <UserProfile/>}
 
               <Routes>
                 <Route path="/" element={<Ecommerce />} />
