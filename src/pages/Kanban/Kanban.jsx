@@ -18,7 +18,7 @@ export default function Kanban() {
 
   const handleDrageEnd = (result) => {
     const { destination, source, draggableId } = result;
-    if (source.destinationId == destination.draggableId) return;
+    if (!destination || source.droppableId === destination.droppableId) return;
 
     //remove
 
@@ -50,11 +50,10 @@ export default function Kanban() {
   return (
     <>
       <DragDropContext onDragEnd={handleDrageEnd}>
-        <h2> Prgress </h2>
-        <div className="flex justify-center">
-          <Column title="to do" tasks={incomplete} id={"1"} />
-          <Column title="done" tasks={completed} id={"2"} />
-          <Column title="backlog" tasks={[]} id={"3"} />
+        <div className=" text-xl text-white font-semibold flex justify-center mt-5">
+          <Column title="To do" tasks={incomplete} id={"1"} />
+          <Column title="Done" tasks={completed} id={"2"} />
+          <Column title="Backlog" tasks={completed} id={"3"} />
         </div>
       </DragDropContext>
     </>

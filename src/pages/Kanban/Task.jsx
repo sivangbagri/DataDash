@@ -1,7 +1,10 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-
+import {useStateContext} from "../../contexts/ContextProvider"
 export default function Task({ task, index }) {
+
+  const { currentColor } = useStateContext();
+
   const bgcolorChange = (props) => {
     return props.isDragging
       ? "green-500"
@@ -22,12 +25,13 @@ export default function Task({ task, index }) {
             ref={provided.innerRef}
             {...provided.dragHandleProps}
             isDragging={snapshot.isDragging}
+            className="bg-purple-700 my-3 p-2 rounded-md opacity-80"
           >
-            <div className="flex justify-start p-2 ">
-              <p>#{task.id}</p>
+            <div className="flex ">
+              <p className="text-xs font-thin ">#{task.id}</p>
             </div>
-            <div className="flex justify-center p-2 ">
-              <p className="text-white">#{task.title}</p>
+            <div className="flex">
+              <p className="text-white text-sm">{task.title}</p>
             </div>
             {provided.placeholder}
           </div>

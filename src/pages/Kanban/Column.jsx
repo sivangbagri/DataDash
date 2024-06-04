@@ -5,14 +5,14 @@ import Task from "./Task";
 export default function Column({ id, title, tasks }) {
   return (
     <>
-      <div className="flex bg-red-700 p-10">
-        {title}
+      <div className="mx-5">
+        <p className="text-center ">{title}</p>
 
         <Droppable droppableId={id}>
           {(provided, snapshot) => {
             return (
               <div
-                className="bg-blue-400 h-auto overflow-y-scroll "
+                className=" p-3 h-auto overflow-y-scroll "
                 ref={provided.innerRef}
                 {...provided.droppableProps}
                 isDraggingOver={snapshot.isDraggingOver}
