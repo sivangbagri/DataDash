@@ -16,14 +16,14 @@ export const ContextProvider = ({ children }) => {
   const [currentColor, setCurrentColor] = useState("#03C907");
   const [themeSettings, setThemeSettings] = useState(false);
   const [currentMode, setCurrentMode] = useState("Light");
-  const [todo,setTodo]=useState([]);
-  const addTodo=(todo_item)=>{
-    setTodo((prev)=>([...prev,todo_item]))
-  }
-  const removeTodo=(id)=>{
-    setTodo((prev)=>(prev.filter((item)=>(item.id!==id))));
+  const [todo, setTodo] = useState([]);
 
-  }
+  const addTodo = (todo_item) => {
+    setTodo((prev) => [...prev, todo_item]);
+  };
+  const removeTodo = (id) => {
+    setTodo((prev) => prev.filter((item) => item.id !== id));
+  };
   const handleClick = (element) => {
     setIsClicked((prev) => ({ ...prev, [element]: !prev[element] }));
   };
@@ -56,8 +56,8 @@ export const ContextProvider = ({ children }) => {
           setThemeSettings,
           todo,
           addTodo,
-          removeTodo,setTodo
-
+          removeTodo,
+          setTodo,
         }}
       >
         {children}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { FiSettings } from "react-icons/fi";
+
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import {
   Ecommerce,
@@ -21,8 +22,18 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
-import { Navbar, Footer, Sidebar, ThemeSettings, Chat, Cart, UserProfile } from "./components";
+import {
+  Navbar,
+  Footer,
+  Sidebar,
+  ThemeSettings,
+  Chat,
+  Cart,
+  UserProfile,
+} from "./components";
 import { useStateContext } from "./contexts/ContextProvider";
+import AuthPage from "./pages/AuthPage";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function App() {
   const {
@@ -33,16 +44,16 @@ export default function App() {
     currentMode,
     isClicked,
     todo,
-    setTodo
+    setTodo,
   } = useStateContext();
 
-  useEffect(()=>{
-    const todos=JSON.parse(localStorage.getItem("todos"));
-    if(todos && todos.length >0) setTodo(todos);
-  },[])
-  useEffect(()=>{
-    localStorage.setItem("todos",JSON.stringify(todo))
-  },[todo])
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    if (todos && todos.length > 0) setTodo(todos);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todo));
+  }, [todo]);
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
@@ -84,8 +95,8 @@ export default function App() {
             <div>
               {themeSettings && <ThemeSettings />}
               {isClicked.chat && <Chat />}
-              {isClicked.cart && <Cart/>}
-              {isClicked.userProfile && <UserProfile/>}
+              {isClicked.cart && <Cart />}
+              {isClicked.userProfile && <UserProfile />}
 
               <Routes>
                 <Route path="/" element={<Ecommerce />} />
