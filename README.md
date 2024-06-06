@@ -13,6 +13,10 @@
 # High level Design 
 ![Untitled-2024-06-06-1515](https://github.com/sivangbagri/DataDash/assets/61118650/7fada0c6-8268-4196-8cf1-13048aebb4a8)
 
+# Preview 
+<img width="958" alt="image" src="https://github.com/sivangbagri/DataDash/assets/61118650/7d675771-a005-4225-a4a8-f196960651b0">
+
+
 # Future Prospect
 - Responsiveness
 - More innovative and time saving features
