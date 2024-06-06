@@ -2,10 +2,10 @@ import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { BsCheck } from "react-icons/bs";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
 import { themeColors } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 import { LegendItemStyle } from "@syncfusion/ej2-react-charts";
+import { Link } from "react-router-dom";
 export default function ThemeSettings() {
 
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
@@ -83,8 +83,11 @@ export default function ThemeSettings() {
                   </div>
                 </TooltipComponent>
               );
+
             })}
+            
           </div>
+          <p className=" dark:text-white/60 mt-52 text-gray-600 text-xs font-thin">Found a bug ? <span className="font-semibold cursor-pointer"><Link to="https://github.com/sivangbagri/DataDash/issues" >Report here</Link></span>  </p>
         </div>
       </div>
     </div>
