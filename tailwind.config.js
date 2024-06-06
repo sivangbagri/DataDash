@@ -40,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294501.jpg?t=st=1717145968~exp=1717149568~hmac=9bcd11436bac668428fe0162819f248a270f1ecb1a55daaf86fd482cd666afd1&w=996')",
+          "url('https://img.freepik.com/free-photo/portrait_23-2150793917.jpg?t=st=1717663658~exp=1717667258~hmac=fe80ee0df4c3e8faee49509ccf211c9bd4cbce2f650c33c552eca660203731c7&w=996')",
       },
     },
   },

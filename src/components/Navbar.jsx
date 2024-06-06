@@ -45,6 +45,8 @@ export default function Navbar() {
     todo,
   } = useStateContext();
   const { user, isAuthenticated } = useAuth0();
+  const { isLoading, error } = useAuth0();
+
   useEffect(() => {
     const handleResize = () => {
       setScreenSize(window.innerWidth);
@@ -72,7 +74,10 @@ export default function Navbar() {
         <div className="flex">
           <NavButton
             title="Chat"
-            customFunc={() => handleClick("cart")}
+            customFunc={() => {
+              handleClick("cart");
+              if (isClicked.userProfile) handleClick("userProfile");
+            }}
             color={currentColor}
             icon={<BsChatLeftDots />}
             showDot={todo.length > 0}
@@ -80,7 +85,10 @@ export default function Navbar() {
           <NavButton
             title="To Do"
             dotColor="#03C9D7"
-            customFunc={() => handleClick("chat")}
+            customFunc={() => {
+              handleClick("chat");
+              if (isClicked.userProfile) handleClick("userProfile");
+            }}
             color={currentColor}
             icon={<BsCardChecklist />}
             showDot={todo.length > 0}
@@ -90,6 +98,8 @@ export default function Navbar() {
               className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
               onClick={() => {
                 handleClick("userProfile");
+                if (isClicked.chat) handleClick("chat");
+                if (isClicked.cart) handleClick("cart");
               }}
             >
               <img className="size-9 rounded-full" src={avatar}></img>
@@ -102,9 +112,10 @@ export default function Navbar() {
       )}
       {!isAuthenticated && (
         <div className="flex items-center">
-          <TooltipComponent content="Unlock Features" position="BottomCenter">
+          <TooltipComponent content="Unlock more Features" position="BottomCenter">
             {" "}
-            <LoginButton />
+            {!error && isLoading && <p>Loading ...</p>}
+            {!error && !isLoading &&  <LoginButton />}
           </TooltipComponent>
         </div>
       )}

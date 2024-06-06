@@ -33,7 +33,7 @@ export default function Ecommerce() {
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
-                <p className="font-bold text-gray-400">Earnings</p>
+                <p className="font-bold text-gray-600">Earnings</p>
                 <p className="text-2xl font-semibold drop-shadow-lg">
                   $63,448.78
                 </p>
@@ -87,8 +87,8 @@ export default function Ecommerce() {
         <div className="flex justify-center  ml-5">
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg mt-3 p-2 rounded-2xl w-7/10 ">
             <div className="flex justify-between">
-              <p className="font-semibold text-xl">Revenue Updates</p>
-              <div className="flex items-center gap-4">
+              <p className="font-medium text-xl ml-3 mt-2">Revenue Updates</p>
+              <div className="flex items-center gap-4 mx-3 mt-2">
                 <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                   <span>
                     <GoDotFill />
