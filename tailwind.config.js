@@ -40,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('https://img.freepik.com/free-photo/portrait_23-2150793917.jpg?t=st=1717663658~exp=1717667258~hmac=fe80ee0df4c3e8faee49509ccf211c9bd4cbce2f650c33c552eca660203731c7&w=996')",
+          "url('https://res.cloudinary.com/dekobspwg/image/upload/v1717668856/Frame_238072_1_pxia7m.png')",
       },
     },
   },

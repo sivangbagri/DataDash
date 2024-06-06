@@ -33,8 +33,8 @@ export default function Ecommerce() {
           <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
             <div className="flex justify-between items-center">
               <div>
-                <p className="font-bold text-gray-600">Earnings</p>
-                <p className="text-2xl font-semibold drop-shadow-lg">
+                <p className="font-bold dark:text-gray-600 text-white/90">Earnings</p>
+                <p className="text-2xl font-semibold text-white dark:drop-shadow-lg">
                   $63,448.78
                 </p>
               </div>
